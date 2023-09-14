@@ -63,7 +63,6 @@ prodsRouter.get('/:pid', async (req,res)=>{
 prodsRouter.post('/', async(req, res)=>{
 
 
-    try {
         //Añado productos
                 const dataProds = await req.body;
                 const addingProd = await prodsController.addProduct(dataProds)
@@ -76,12 +75,6 @@ prodsRouter.post('/', async(req, res)=>{
                 res.status(200).send({"Producto agregado": addingProd})
 
         
-    } catch (error) {
-
-        res.status(500).send(error)
-        
-    }
-
 })
 
 //Actualizando Productos
